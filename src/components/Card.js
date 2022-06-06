@@ -19,7 +19,7 @@ export default class Card extends Component {
     let summaryString = '';
 
     //- creates the comment summary string depending on the amount of comments and users
-    if (dynamicUserList.length < 3) {
+    if (dynamicUserList.length > 0 && dynamicUserList.length < 3) {
       summaryString = 'No other comments';
     }
 
@@ -29,6 +29,10 @@ export default class Card extends Component {
       } and ${dynamicUserList[1].name.split(' ')[0]} and ${
         dynamicUserList.length - uniqueUsers.length
       } others`;
+    }
+
+    if (dynamicUserList.length < 0) {
+      summaryString = '';
     }
 
     const showLog = () => {
@@ -46,30 +50,36 @@ export default class Card extends Component {
           <p className='text-sm text-gray-400 mt-1'>{description}</p>
         </section>
         <div className='border-gray-100 border-2 py-2 px-3  mt-4 rounded-md'>
-          <section>
-            {this.state.showLog &&
-              dynamicUserList.map((user) => {
-                return (
-                  <div
-                    className='flex flex-col sm:flex-row gap-1 py-[0.2rem]'
-                    key={user.commentId}>
-                    <p className='text-sm font-black'>{user.name}:</p>
-                    <p className='text-sm truncate'>{user.info}</p>
-                  </div>
-                );
-              })}
-            {!this.state.showLog &&
-              dynamicUserList.slice(0, 3).map((user) => {
-                return (
-                  <div
-                    className='flex flex-col sm:flex-row gap-1 py-[0.2rem]'
-                    key={user.commentId}>
-                    <p className='text-sm font-black'>{user.name}:</p>
-                    <p className='text-sm truncate'>{user.info}</p>
-                  </div>
-                );
-              })}
-          </section>
+          {dynamicUserList.length > 0 ? (
+            <section>
+              {this.state.showLog &&
+                dynamicUserList.map((user) => {
+                  return (
+                    <div
+                      className='flex flex-col sm:flex-row gap-1 py-[0.2rem]'
+                      key={user.commentId}>
+                      <p className='text-sm font-black'>{user.name}:</p>
+                      <p className='text-sm truncate'>{user.comment}</p>
+                    </div>
+                  );
+                })}
+              {!this.state.showLog &&
+                dynamicUserList.slice(0, 3).map((user) => {
+                  return (
+                    <div
+                      className='flex flex-col sm:flex-row gap-1 py-[0.2rem]'
+                      key={user.commentId}>
+                      <p className='text-sm font-black'>{user.name}:</p>
+                      <p className='text-sm truncate'>{user.comment}</p>
+                    </div>
+                  );
+                })}
+            </section>
+          ) : (
+            <section>
+              <p>No Data</p>
+            </section>
+          )}
           <footer className='flex justify-between mt-2 text-xs'>
             <p>
               {!this.state.showLog ? summaryString : 'Viewing all comments'}
