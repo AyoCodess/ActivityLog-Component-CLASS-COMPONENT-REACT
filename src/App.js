@@ -5,7 +5,7 @@ import { cardInfo } from './Data';
 class App extends Component {
   render() {
     return (
-      <div className='grid place-items-center h-screen p-3 '>
+      <div className='flex justify-center items-center h-screen px-3 '>
         <Card cardInfo={cardInfo} />
       </div>
     );
