@@ -71,10 +71,13 @@ export default class Card extends Component {
         </section>
         <div className='border-gray-100 border-2 py-2 px-3  mt-4 rounded-md'>
           <section>{sections}</section>
-          <footer className='flex justify-between mt-2 text-xs'>
+          <hr className='mt-2 border sm:hidden' />
+          <footer className='flex flex-col sm:flex-row sm:justify-between mt-2 text-xs'>
             <p>{summaryString}</p>
             {dynamicUserList.length > 3 ? (
-              <button onClick={this.toggleShowLog} className='font-bold'>
+              <button
+                onClick={this.toggleShowLog}
+                className='font-bold cursor-pointer w-fit mt-2 sm:mt-0'>
                 {!showLog ? 'View full activity log' : 'Collapse activity log'}
                 {'  '}
                 <ArrowCircleRightIcon className='h-3 w-3 ml-1 inline-block' />
