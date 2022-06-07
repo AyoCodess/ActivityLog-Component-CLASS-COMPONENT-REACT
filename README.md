@@ -2,7 +2,9 @@
 
 ## Get Started
 
-Clone this repo
+```
+Clone repo
+```
 
 ```
 npm install
@@ -14,7 +16,7 @@ npm start
 
 ## About
 
-Edit the user object in Data.js to view how the component handles those changes.
+Edit the 'cardInfo' object in Data.js to view how the component handles those changes.
 
 ## Live-link
 
