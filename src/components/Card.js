@@ -62,7 +62,7 @@ export default class Card extends Component {
     summaryString = !showLog ? summaryString : 'Viewing all comments';
 
     return (
-      <article className='px-2 w-screen md:w-11/12 lg:w-2/3'>
+      <article className='px-3 w-screen md:w-11/12 lg:w-2/3'>
         <header>
           <h2 className='text-2xl font-extrabold'>{title}</h2>
         </header>
