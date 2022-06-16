@@ -55,11 +55,11 @@ export default class Card extends Component {
     if (dynamicUserList.length > 3) {
       summaryString = `+${dynamicUserList.slice(3).length} more comments from ${
         dynamicUserList.slice(3)[0]
-          ? `${dynamicUserList.slice(3)[0].name.split(' ')[0]}`
+          ? `${dynamicUserList.slice(3)[0].name.split(' ')[0]},`
           : ','
       } ${
         dynamicUserList.slice(3)[1]
-          ? `, ${dynamicUserList.slice(3)[1].name.split(' ')[0]}`
+          ? ` ${dynamicUserList.slice(3)[1].name.split(' ')[0]}`
           : ''
       } ${
         dynamicUserList.length >= 6
