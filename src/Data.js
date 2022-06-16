@@ -5,7 +5,7 @@ export const cardInfo = {
   users: [
     {
       commentId: 1,
-      name: 'Molly Marshall',
+      name: 'Noah Simpson',
       comment:
         'Donec vehicula ultricies turpis nec sagittis. Phasellus rhoncus vulputate',
     },
@@ -17,13 +17,13 @@ export const cardInfo = {
     },
     {
       commentId: 3,
-      name: 'Molly Marshall',
+      name: 'Noah Simpson',
       comment:
         'In nec nunc sed libero venenatis congue id bibendum mi. Quisque se mauris',
     },
     {
       commentId: 4,
-      name: 'Molly Marshall',
+      name: 'Clint Davis',
       comment:
         'Ui nec nunc sed libero venenatis congue id bibendum mi. Quisque se mauris',
     },
@@ -35,7 +35,7 @@ export const cardInfo = {
     },
     {
       commentId: 6,
-      name: 'Arabella Stevens',
+      name: 'Molly Marshall',
       comment:
         'Ui nec nunc sed libero venenatis congue id bibendum mi. Quisque se mauris',
     },

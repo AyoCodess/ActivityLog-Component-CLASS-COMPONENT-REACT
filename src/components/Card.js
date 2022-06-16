@@ -51,12 +51,21 @@ export default class Card extends Component {
       summaryString = 'No other comments';
     }
 
-    if (dynamicUserList.length >= 3) {
+    console.log(dynamicUserList.slice(3));
+    if (dynamicUserList.length > 3) {
       summaryString = `+${dynamicUserList.slice(3).length} more comments from ${
-        dynamicUserList[0].name.split(' ')[0]
-      } and ${dynamicUserList[1].name.split(' ')[0]} and ${
-        dynamicUserList.length - uniqueUsers.length
-      } others`;
+        dynamicUserList.slice(3)[0]
+          ? `${dynamicUserList.slice(3)[0].name.split(' ')[0]}`
+          : ','
+      } ${
+        dynamicUserList.slice(3)[1]
+          ? `, ${dynamicUserList.slice(3)[1].name.split(' ')[0]}`
+          : ''
+      } ${
+        dynamicUserList.length >= 6
+          ? `and ${uniqueUsers.length - 3} others`
+          : ''
+      }`;
     }
 
     summaryString = !showLog ? summaryString : 'Viewing all comments';
